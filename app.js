@@ -5,6 +5,7 @@ const schedule = require('node-schedule')
 const config = require('./config.json')
 
 const TOKEN = config.token
+const DRY_RUN = config.dryRun
 const JOBS_PATTERN = './data/jobs/*.json'
 const OPTOUT_DB = './data/optout.json'
 const MESSAGE_SPACING = 1000 // ms
@@ -55,8 +56,12 @@ async function executeJob (job) {
       continue
     }
 
-    console.log(`Sending message to ${user.username}`)
-    await user.send(job.template)
+    if (DRY_RUN) {
+      console.log(`Pretending to send message to ${user.username}:\n${job.template}`)
+    } else {
+      console.log(`Sending message to ${user.username}:\n${job.template}`)
+      await user.send(job.template)
+    }
     await sleep(MESSAGE_SPACING)
   }
 }
