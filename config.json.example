@@ -1,4 +1,5 @@
 {
     "token": "redacted",
-    "dryRun": false
+    "dryRun": false,
+    "optOutResponse": "Okay, we'll stop annoying you. :("
 }

@@ -11,7 +11,7 @@ const OPTOUT_DB = './data/optout.json'
 const MESSAGE_SPACING = 1000 // ms
 const REACTION_LIMIT = 100
 const OPTOUT_COMMAND = '!stop'
-const OPTOUT_RESPONSE = 'Okay, wir nerven dich nicht mehr. :('
+const OPTOUT_RESPONSE = config.optOutResponse
 
 const optOutList = require(OPTOUT_DB)
 
