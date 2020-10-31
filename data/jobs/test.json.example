@@ -1,0 +1,8 @@
+{
+    "guild": "redacted",
+    "channel": "redacted",
+    "message": "redacted",
+    "reaction": "🔔",
+    "datetime": "2020-10-30 20:00",
+    "template": "Reminder Text. Reply with `!stop` to stop receiving reminders."
+}
