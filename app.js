@@ -59,8 +59,12 @@ async function executeJob (job) {
     if (DRY_RUN) {
       console.log(`Pretending to send message to ${user.username}:\n${job.template}`)
     } else {
-      console.log(`Sending message to ${user.username}:\n${job.template}`)
-      await user.send(job.template)
+      try {
+        await user.send(job.template)
+        console.log(`Sent message to ${user.username}:\n${job.template}`)
+      } catch (e) {
+        console.error(`Failed to send message to ${user.username}`)
+      }
     }
     await sleep(MESSAGE_SPACING)
   }
