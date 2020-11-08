@@ -6,9 +6,9 @@ const config = require('./config.json')
 
 const TOKEN = config.token
 const DRY_RUN = config.dryRun
+const SLEEP = config.sleep
 const JOBS_PATTERN = './data/jobs/*.json'
 const OPTOUT_DB = './data/optout.json'
-const MESSAGE_SPACING = 1000 // ms
 const REACTION_LIMIT = 100
 const OPTOUT_COMMAND = '!stop'
 const OPTOUT_RESPONSE = config.optOutResponse
@@ -66,7 +66,7 @@ async function executeJob (job) {
         console.error(`Failed to send message to ${user.username}`)
       }
     }
-    await sleep(MESSAGE_SPACING)
+    await sleep(SLEEP)
   }
 }
 

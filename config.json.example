@@ -1,5 +1,6 @@
 {
     "token": "redacted",
+    "sleep": 30000,
     "dryRun": false,
     "optOutResponse": "Okay, we'll stop annoying you. :("
 }
