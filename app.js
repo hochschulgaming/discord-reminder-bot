@@ -86,7 +86,7 @@ async function scheduleJobs () {
     }
 
     // make sure it exists
-    getReaction(job)
+    await getReaction(job)
 
     schedule.scheduleJob(datetime, () => {
       executeJob(job).catch(console.error)
