@@ -106,7 +106,7 @@ client.on('ready', () => {
 })
 
 client.on('message', message => {
-  if (message.content.trim().toLowerCase() === OPTOUT_COMMAND.toLowerCase()) {
+  if (message.channel.type === 'dm' && message.content.trim().toLowerCase() === OPTOUT_COMMAND.toLowerCase()) {
     optOut(message.author).catch(console.error)
   }
 })
